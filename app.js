@@ -12,4 +12,5 @@ app.get('/api', (req, res) => {
         message: "How's it going"
     });
 });
+
 app.listen(3000, () => console.log('Server started on port 3000'));
