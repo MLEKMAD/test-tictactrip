@@ -6,6 +6,9 @@
  * @returns {string[]} - array of text's words
  */
 exports.generator = function*(text){
+    for (const word of text.split(' ')) {
+        yield word;
+    }
 }
 /**
  * 
