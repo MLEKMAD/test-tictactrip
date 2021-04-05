@@ -3,9 +3,10 @@
 /**
  * 
  * @param {string} text 
- * @returns {string[]} - array of text's words
+ * @returns { { value: string | undefined, done: boolean } } 
  */
 exports.generator = function*(text){
+    text = String(text); // making sure the input is a string
     for (const word of text.split(' ')) {
         yield word;
     }
@@ -16,8 +17,6 @@ exports.generator = function*(text){
  * @returns {string} - the justified text
  */
 exports.justify = (text) => {
-    text = String(text); // making sure the input is a string
-
-
+    
     return text;
 }
