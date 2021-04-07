@@ -23,7 +23,7 @@ describe('convert text into words test', ()=>{
 describe('justification test', ()=>{
     it('jutifies a text', ()=>{
         const MAX_LENGTH = 80;
-        const text = faker.lorem.paragraph();
+        const text = faker.lorem.paragraphs();
         const justifiedText = justify(text);
         const lines = justifiedText.split('\n')
         for (const line of lines) {
