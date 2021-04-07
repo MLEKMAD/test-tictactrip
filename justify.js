@@ -1,4 +1,4 @@
-const fs = require('fs');
+
 
 /**
  * 
@@ -43,7 +43,6 @@ exports.justify = (text) => {
 
         i = j;
     }
-    fs.writeFileSync('./test.txt', result.join("\n"));
     return result.join('\n');
 }
 // helper function generate white spaces with length k
