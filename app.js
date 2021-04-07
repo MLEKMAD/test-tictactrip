@@ -1,7 +1,7 @@
 const express = require("express");
 const { justify } = require("./justify");
 const { verifyToken, authenticate } = require("./utils/authenticate");
-const RateLimiter = require("./ratelimiter");
+const RateLimiter = require("./utils/ratelimiter");
 
 const REFRESH_TIME = 24;
 const MAX_WORDS_RATE = 10;

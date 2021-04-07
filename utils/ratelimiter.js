@@ -17,7 +17,7 @@ class RateLimiter {
       const oldRate = this.users[user] || this.MAX_LENGTH;
       this.users[user] = oldRate - length;
     } else {
-      throw new Error("Rate limit exceeded!");
+      throw new Error("Payment Required");
     }
   }
   isAbleToCall(user, length) {
@@ -33,7 +33,7 @@ class RateLimiter {
     try {
       this.reduceRate(ip, length);
     } catch (e) {
-      res.status(400);
+      res.status(402);
       res.json({ error: e.message });
     }
     next();
