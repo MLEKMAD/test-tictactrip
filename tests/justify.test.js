@@ -1,45 +1,47 @@
 const assert = require('assert');
-const {justify, generator} = require('../justify');
+const {justify, covertTextToWords} = require('../justify');
+const faker = require("faker")
 
-describe('generator test', ()=>{
+describe('convert text into words test', ()=>{
     /**
      * helper function to assert the generator is done
      * @param {*} generator 
      */
-    const assertGeneratorDone = (generator)=>{
-        let generatedValue = generator.next(); 
-        assert.strictEqual(generatedValue.done, true);
-        assert.ok(!generatedValue.value, "End of text, no next word")
-    }
 
-    it('generates words from a text', ()=>{
-        let wordsList = ["someone", "like", "you", "\n", "adele", "lol"];
-        let text = wordsList.join(" ");
-        const myGenerator = generator(text);
-        for (const word of wordsList) {
-            let { value: nextWord, done } = myGenerator.next();
-            assert.strictEqual(nextWord, word);
-            assert.strictEqual(done, false, "We are not done yet!");
+    it('converts text to words', ()=>{
+        let expectedWordsList = ["someone", "like", "you", "\n", "adele", "lol"];
+        let text = expectedWordsList.join(" ");
+        const wordsList = covertTextToWords(text);
+        for (let i = 0; i<expectedWordsList.length; i++) {
+            assert.strictEqual(wordsList[i], expectedWordsList[i]);
         }
-        assertGeneratorDone(myGenerator);
         
     });
 
-    it('can handle undefined inputs', ()=>{
-        let text = undefined;
-        const myGenerator = generator(text);
-        const generatedWord = myGenerator.next();
-        assert.strictEqual(generatedWord.value, 'undefined');
-        assert.strictEqual(generatedWord.done, false);
-        assertGeneratorDone(myGenerator);
+    // it('can handle undefined inputs', ()=>{
+    //     let text = undefined;
+    //     const myGenerator = generator(text);
+    //     const generatedWord = myGenerator.next();
+    //     assert.strictEqual(generatedWord.value, 'undefined');
+    //     assert.strictEqual(generatedWord.done, false);
+    //     assertGeneratorDone(myGenerator);
         
-    });
+    // });
 
    
 })
 
 describe('justification test', ()=>{
     it('jutifies a text', ()=>{
-
+        const MAX_LENGTH = 80;
+        const text = faker.lorem.paragraph();
+        const justifiedText = justify(text);
+        console.log('justified text:\n', justifiedText);
+        const lines = justifiedText.split('\n')
+        for (const line of lines) {
+            console.log("actual line: ", line)
+            console.log("actual length: ", line.length);
+            assert.strictEqual(line.length <=  MAX_LENGTH, true);
+        }
     })
 })
