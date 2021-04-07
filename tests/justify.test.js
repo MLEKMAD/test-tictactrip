@@ -17,11 +17,6 @@ describe('convert text into words test', ()=>{
         }
         
     });
-
-    // it('can handle undefined inputs', ()=>{
-    //     let text = undefined;        
-    // });
-
    
 })
 
@@ -30,11 +25,8 @@ describe('justification test', ()=>{
         const MAX_LENGTH = 80;
         const text = faker.lorem.paragraph();
         const justifiedText = justify(text);
-        console.log('justified text:\n', justifiedText);
         const lines = justifiedText.split('\n')
         for (const line of lines) {
-            console.log("actual line: ", line)
-            console.log("actual length: ", line.length);
             assert.strictEqual(line.length <=  MAX_LENGTH, true);
         }
     })
