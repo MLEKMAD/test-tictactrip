@@ -6,7 +6,6 @@ const SECRET_KEY = process.env.SECRET_KEY;
 exports.verifyToken = (req, res, next) => {
   // getting header
   const bearerHeader = req.headers["authorization"];
-
   if (bearerHeader) {
     //getting the token
     const [, bearerToken] = bearerHeader.split(" ");
@@ -22,6 +21,8 @@ exports.verifyToken = (req, res, next) => {
     res.sendStatus(403);
   }
 };
+
+
 /**
  * It authenticates the user 
  * To keep it simple, we used one user who is foo@bar.fr
@@ -29,7 +30,6 @@ exports.verifyToken = (req, res, next) => {
  * @param {*} res 
  */
 exports.authenticate = (req, res) => {
-    console.log("body", req.body)
   // Mock user
   const user = {
     email: "foo@bar.fr",

@@ -1,6 +1,6 @@
 const express = require('express');
 const {justify} = require('./justify');
-const {verifyToken, authenticate} = require('./authenticate');
+const {verifyToken, authenticate} = require('./utils/authenticate');
 const RateLimiter = require('./ratelimiter');
 
 const REFRESH_TIME = 24;
