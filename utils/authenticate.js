@@ -22,12 +22,11 @@ exports.verifyToken = (req, res, next) => {
   }
 };
 
-
 /**
- * It authenticates the user 
+ * It authenticates the user
  * To keep it simple, we used one user who is foo@bar.fr
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  */
 exports.authenticate = (req, res) => {
   // Mock user
@@ -37,14 +36,14 @@ exports.authenticate = (req, res) => {
 
   if (!req.body || !req.body.email) {
     res.sendStatus(401);
-    return 
+    return;
   }
   if (req.body.email !== user.email) {
     res.sendStatus(401);
     return;
   }
   jwt.sign({ user }, SECRET_KEY, (err, token) => {
-    res.setHeader('authorization', `bearer ${token}`);
+    res.setHeader("authorization", `bearer ${token}`);
     res.json(user);
   });
 };
