@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "nyc --reporter=text mocha tests"
   },
   "author": "",
