@@ -13,7 +13,7 @@ describe('generator test', ()=>{
     }
 
     it('generates words from a text', ()=>{
-        let wordsList = ["someone", "like", "you", "adele", "lol"];
+        let wordsList = ["someone", "like", "you", "\n", "adele", "lol"];
         let text = wordsList.join(" ");
         const myGenerator = generator(text);
         for (const word of wordsList) {
@@ -34,6 +34,8 @@ describe('generator test', ()=>{
         assertGeneratorDone(myGenerator);
         
     });
+
+   
 })
 
 describe('justification test', ()=>{
