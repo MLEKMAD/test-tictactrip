@@ -10,7 +10,7 @@ exports.verifyToken = (req, res, next) => {
   if (bearerHeader) {
     //getting the token
     const [, bearerToken] = bearerHeader.split(" ");
-    jwt.verify(bearerToken, process.env.SECRET_KEY, (err, data) => {
+    jwt.verify(bearerToken, SECRET_KEY, (err, data) => {
       if (err) {
         res.sendStatus(403);
         return;
