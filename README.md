@@ -33,11 +33,13 @@ This text justification api, have many functionalities :
     <li>
       It authenticates the user.
     </li>
-    <li>
-      It has a rate limit that limits the user 
+     <li>
+      It justifies a given text so its lines would be 80 words length each.
     </li>
-    <li><a href="#usage">Usage</a></li>
-      <li><a href="#test">Usage</a></li>
+    <li>
+      It has a rate limit that limits the user.
+    </li>
+   
   </ol>
 
 
