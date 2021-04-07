@@ -19,13 +19,7 @@ describe('convert text into words test', ()=>{
     });
 
     // it('can handle undefined inputs', ()=>{
-    //     let text = undefined;
-    //     const myGenerator = generator(text);
-    //     const generatedWord = myGenerator.next();
-    //     assert.strictEqual(generatedWord.value, 'undefined');
-    //     assert.strictEqual(generatedWord.done, false);
-    //     assertGeneratorDone(myGenerator);
-        
+    //     let text = undefined;        
     // });
 
    

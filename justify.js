@@ -1,5 +1,3 @@
-
-
 /**
  * 
  * @param {string} text 
@@ -16,7 +14,7 @@ exports.covertTextToWords = function(text){
  * @returns {string} - the justified text
  */
 exports.justify = (text) => {
-    const MAX_LENGTH = 79;
+    const MAX_LENGTH = 80;
     var words = this.covertTextToWords(text);
     const result = [];
     let i = 0;
@@ -62,13 +60,14 @@ const middleJustify = (words, diff, i, j) => {
     let result = words[i];
     for(let k = i+1; k < j; k++) {
         let spacesToApply = spaces + (extraSpaces > 0 ? 1:0);
+        extraSpaces -=1;
         result += getPadding(spacesToApply) + words[k];
     }
     return result;
 }
 
 const leftJustify = (words, diff, i, j) => {
-    let spacesToRight = diff - j - i - 1;
+    let spacesToRight = diff - (j - i - 1);
 
     let result = words[i];
     for (let k = i + 1; k < j; k++) {
