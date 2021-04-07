@@ -1,10 +1,9 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
-require('dotenv').config();
 const {justify} = require('./justify');
 const {verifyToken, authenticate} = require('./authenticate');
 const RateLimiter = require('./ratelimiter');
-const REFRESH_TIME = 3600*24;
+
+const REFRESH_TIME = 24;
 const MAX_WORDS_RATE = 10;
 let rateLimiter = new RateLimiter(REFRESH_TIME, MAX_WORDS_RATE);
 

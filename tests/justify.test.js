@@ -16,12 +16,12 @@ describe('convert text into words test', ()=>{
         for (let i = 0; i<expectedWordsList.length; i++) {
             assert.strictEqual(wordsList[i], expectedWordsList[i]);
         }
-        
     });
    
 })
 
 describe('justification test', ()=>{
+
     it('jutifies a text', ()=>{
         const MAX_LENGTH = 80;
         const text = faker.lorem.paragraphs();
@@ -30,25 +30,27 @@ describe('justification test', ()=>{
         for (const line of lines) {
             assert.strictEqual(line.length <=  MAX_LENGTH, true);
         }
-    })
+    });
+
 })
 
 describe("authenticate", () => {
     const user = {
         email: 'foo@bar.fr'
     } 
+
     it("should authenticate the user", (done) => {
         chai.request(app)
           .post('/api/token')
           .send({'email':user.email})
           .then((res) => {
-              console.log("res:\n",res)
              assert.strictEqual(res.status,200);
              const body = res.body;
              console.log(body)
             done();
           }).catch((err) => done(err))
      });
+     
   });
   
 
