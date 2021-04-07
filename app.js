@@ -1,6 +1,5 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const parser = require('body-parser');
 require('dotenv').config();
 const {justify} = require('./justify');
 
@@ -8,9 +7,9 @@ const SECRET_KEY = process.env.SECRET_KEY;
 
 
 const app = express();
-app.use(parser.urlencoded({ extended: true }));
-app.use(parser.json());
-app.use(parser.text());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.text());
 
 
 app.get('/api', (req, res) => {
@@ -25,7 +24,6 @@ app.post('/api/justify', verifyToken,  (req, res) => {
         }
         else {
             res.set('Content-Type', 'text/plain')
-            console.log("justified text: \n", justify(req.body))
             res.send(justify(req.body));
         }
     })
