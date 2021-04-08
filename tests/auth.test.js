@@ -4,7 +4,9 @@ var chaiHttp = require("chai-http");
 const app = require("../app");
 
 chai.use(chaiHttp);
-
+/**
+ * Here we test the authentication
+ */
 describe("authenticate", () => {
   const user = {
     email: "foo@bar.fr",

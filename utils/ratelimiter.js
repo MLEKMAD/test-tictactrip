@@ -1,3 +1,7 @@
+/**
+ * This class deals with the rate limit use case
+ * It stores Ip address of each user and then reduces the rate 
+ */
 class RateLimiter {
   constructor(refresh_time, max_length = 80000) {
     this.reintializetUsers();
@@ -20,6 +24,9 @@ class RateLimiter {
       throw new Error("Payment Required");
     }
   }
+  /**
+   * The user is able to call the justification function if he has some quota left
+   */
   isAbleToCall(user, length) {
     if (!(user in this.users)) {
       return length <= this.MAX_LENGTH;
