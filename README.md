@@ -1,5 +1,5 @@
   <h3 align="center">Text Justification - Tictactrip</h3>
-  <a href="https://text-justification.herokuapp.com/">The app url</a>
+  <a align="center" href="https://text-justification.herokuapp.com/">The app url</a>
 
   <p align="center">
     A text justification API.
