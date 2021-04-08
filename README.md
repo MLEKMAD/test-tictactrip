@@ -73,19 +73,3 @@ To use this project you should have node installed.
     ```sh
     npm test  
    ```
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
