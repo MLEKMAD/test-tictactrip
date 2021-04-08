@@ -4,7 +4,7 @@
   <p align="center">
     A text justification API.
   </p>
-</p>
+
 
 
 <details open="open">
