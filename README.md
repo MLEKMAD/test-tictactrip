@@ -73,9 +73,14 @@ To use this project you should have node installed.
    ```sh
    npm start   
    ```
+### Endpoints
+#### /api/token
+This endpoint return a token to our user so he can use the authenticated endpoints, It takes as a body the email of the user, in our case, to make it simple the user is {"email": "foo@bar.fr"}
+#### /api/justify
+This is the main endpoint, it justifies a text that is passed to the body, but first make sure to put your token in the headers. 
 
 ## Test 
-### Test The project
+### Test The project and see the coverage
    ```sh
    npm test
    ```
