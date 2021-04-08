@@ -43,6 +43,9 @@ This text justification api, have many functionalities :
    <li>
      If the text is bigger than 80000, the api return 402 code.
   </li>
+     <li>
+     If the user exceeds his quota of the day, the api return 402 code.
+  </li>
   </ol>
 
 
