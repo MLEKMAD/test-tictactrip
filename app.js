@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.text());
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
+    publicURL: "https://text-justification.herokuapp.com/",
     message: "How's it going",
   });
 });
