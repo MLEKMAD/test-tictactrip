@@ -29,7 +29,7 @@
 
 ## About The Project
 
-This text justification api, have many functionalities :
+This text justification api has many functionalities :
 <ol>
     <li>
       It authenticates the user.
