@@ -1,7 +1,7 @@
 const express = require("express");
-const { justify } = require("./justify");
-const { verifyToken, authenticate } = require("./utils/authenticate");
-const RateLimiter = require("./utils/ratelimiter");
+const { justify } = require("./lib/justify");
+const { verifyToken, authenticate } = require("./lib/authenticate");
+const RateLimiter = require("./lib/ratelimiter");
 
 const REFRESH_TIME = 3600*24;
 const MAX_WORDS_RATE = 80000;
@@ -35,6 +35,6 @@ app.post("/api/justify", verifyToken, rateLimiter.middleware, (req, res) => {
  */
 app.post("/api/token", authenticate);
 
-app.listen(process.env.PORT || 3000, () => console.log("Server started on port 3000"));
+app.listen(process.env.PORT || 3000, () => console.log(`Server started on port ${process.env.PORT || 3000} `));
 
 module.exports = app;
