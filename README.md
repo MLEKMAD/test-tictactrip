@@ -1,4 +1,5 @@
   <h3 align="center">Text Justification - Tictactrip</h3>
+  <a href="https://text-justification.herokuapp.com/">The app url</a>
 
   <p align="center">
     A text justification API.
@@ -37,9 +38,11 @@ This text justification api, have many functionalities :
       It justifies a given text so its lines would be 80 words length each.
     </li>
     <li>
-      It has a rate limit that limits the user.
+      It has a rate limit that limits the user to 80000  a day.
     </li>
-   
+   <li>
+     If the text is bigger than 80000, the api return 402 code.
+  </li>
   </ol>
 
 
