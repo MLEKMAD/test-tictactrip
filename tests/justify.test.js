@@ -2,7 +2,7 @@ const assert = require("assert");
 const { justify, covertTextToWords } = require("../justify");
 const faker = require("faker");
 /**
- * We test the funvtion that converts the text into words
+ * We test the function that converts the text into words
  */
 describe("convert text into words test", () => {
   it("converts text to words", () => {
