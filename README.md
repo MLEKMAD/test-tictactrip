@@ -20,7 +20,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-      <li><a href="#test">Tests</a></li>
+      <li><a href="#test">Test</a></li>
   </ol>
 </details>
 
